@@ -1,4 +1,4 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,9 +11,9 @@
 <a href="member.mdo?cmd=login">로그인</a><br>
 <a href="member.mdo?cmd=regForm">회원가입</a><br>
 </body>
-</html> --%>
+</html>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,4 +24,4 @@
 <body>
 index.jsp 시작!!
 </body>
-</html>
+</html> --%>

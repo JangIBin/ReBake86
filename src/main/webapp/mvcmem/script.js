@@ -7,6 +7,9 @@ function idCheck(id) {
 		window.open(url,"post","width=300,height=150");
 		
 	}
+	if(id == null) {
+		alert("다름");
+	}
 }
 
 
