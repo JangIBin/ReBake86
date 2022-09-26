@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-<jsp:useBean id="dao" class="com.mvcmem.model.StudentDAO"/>
+	pageEncoding="UTF-8"%>
+
+<jsp:useBean id="dao" class="com.mvcmem.model.StudentDAO" />
 
 <%
 	String id = request.getParameter("id");

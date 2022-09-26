@@ -44,10 +44,10 @@ function loginIdCheck(loginID){
 	
 	if(loginID == ''){
 		alert('로그인이 필요한 기능입니다.');
- 		location.href = '/TeamProject/board/mem/loginForm.bdo';
+ 		location.href = '/ReBake86/board/mem/loginForm.bdo';
  		return true;
  	}else{
-	 	location.href = '/TeamProject/board/writeForm.bdo';
+	 	location.href = '/ReBake86/board/writeForm.bdo';
  		return true;
  	}
 	
