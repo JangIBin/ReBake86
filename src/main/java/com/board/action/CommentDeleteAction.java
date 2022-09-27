@@ -1,17 +1,20 @@
 package com.board.action;
 
 import java.io.File;
+import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.comment.model.CommentDAO;
 import com.comment.model.CommentVO;
+import com.mvcmem.action.Action;
+import com.mvcmem.control.ActionForward;
 
-public class CommentDeleteAction implements CommandAction {
+public class CommentDeleteAction implements Action {
 
 	@Override
-	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		request.setCharacterEncoding("utf-8");
 		
@@ -35,7 +38,7 @@ public class CommentDeleteAction implements CommandAction {
 				CommentDAO commentDAO = new CommentDAO();
 				int result = commentDAO.delete(commentID);
 				
-				String real = "C:\\jspworkspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\TestProject2\\board\\img\\uploadImg";
+				String real = "C:\\jspworkspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\Rebake86\\board\\img\\uploadImg";
 				/* String commentReal = "C:\\Users\\SUCCU\\Desktop\\JSP_STUDY\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\TeamProject\\boardone\\img\\uploadImg"; */
 				if(result != -1) {
 					File delFile = new File(real+"\\"+comment.getImageUID()+".jpg");
@@ -48,8 +51,8 @@ public class CommentDeleteAction implements CommandAction {
 				request.setAttribute("num", num);
 				request.setAttribute("commentID", commentID);
 				request.setAttribute("comment", comment);
-				
-		return "/board/commentDeleteAction.jsp";
+		
+		return new ActionForward("/board/commentDeleteAction.jsp", false);
 	}
-
+	
 }

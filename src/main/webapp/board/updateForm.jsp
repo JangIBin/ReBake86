@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>게시판</title>
 <link rel="stylesheet" type="text/css" href="style.css?after">
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="../board/script.js"></script>
 </head>
 
 <body bgcolor="${bodyback_c }">
@@ -18,7 +18,7 @@
 		<b>글 수정</b><br>
 		<br>
 
-		<form action="/ReBake86/board/updatePro.bdo?pageNum=${pageNum }"
+		<form action="member.mdo?cmd=updatePro&pageNum=${pageNum }"
 			method="post" name="writeForm" onsubmit="return writeSave()"
 			encType="multipart/form-data">
 
@@ -44,7 +44,7 @@
 				<tr>
 					<td width="70" bgcolor="${value_c }" align="center">이메일</td>
 					<td width="330" align="left"><input type="text" size="30"
-						maxlength="30" name="email" value="${article.email }"></td>
+						maxlength="30" name="email" value="${article.email }" readonly="readonly"></td>
 				</tr>
 
 				<tr>
@@ -68,7 +68,7 @@
 					<td colspan="2" bgcolor="${value_c }" align="center"><input
 						type="submit" value="글수정"> <input type="reset"
 						value="다시작성"> <input type="button" value="목록"
-						onclick="window.location.href='/ReBake86/board/list.bdo?pageNum=${pageNum }'">
+						onclick="window.location.href='member.mdo?cmd=list&pageNum=${pageNum }'">
 					</td>
 				</tr>
 			</table>

@@ -40,14 +40,23 @@ function searchSave() {
 	
 }
 
+function updateCommentSave() {
+	if(document.c_commentUpdate.update.value==""){
+		alert("댓글 내용을 입력하십시요.");
+		document.c_commentUpdate.update.focus();
+		return false;
+	}
+	
+}
+
 function loginIdCheck(loginID){
 	
-	if(loginID == ''){
+	if(loginID == ""){
 		alert('로그인이 필요한 기능입니다.');
- 		location.href = '/ReBake86/board/mem/loginForm.bdo';
+ 		location.href = 'member.mdo?cmd=login';
  		return true;
  	}else{
-	 	location.href = '/ReBake86/board/writeForm.bdo';
+	 	location.href = 'member.mdo?cmd=writeForm';
  		return true;
  	}
 	
@@ -65,6 +74,6 @@ function checkText() {
 
 function nwindow(num,commentID){
 		window.name = "commentParant";
-		var url= "commentUpdate.bdo?num="+num+"&commentID="+commentID;
+		var url= "member.mdo?cmd=commentUpdate&num="+num+"&commentID="+commentID;
 		window.open(url,"","width=600,height=230,left=300");
 }

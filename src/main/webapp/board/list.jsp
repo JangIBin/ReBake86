@@ -10,27 +10,27 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판</title>
-<link rel="stylesheet" type="text/css" href="style.css?after">
-<script type="text/javascript" src="script.js"></script>
+<link rel="stylesheet" type="text/css" href="../board/style.css?after">
+<script type="text/javascript" src="../board/script.js"></script>
 </head>
 <body bgcolor="${bodyback_c }">
 
 	<c:set var="loginID" value="${sessionScope.loginID }" />
 
 	<div align="center">
-		<b><a href="/ReBake86/board/list.bdo?pageNum=1">글 목록</a>(전체
+		<b><a href="member.mdo?cmd=list&pageNum=1">글 목록</a>(전체
 			글:${count })</b>
 		<table width="700">
 			<tr>
 				<c:choose>
 					<c:when test="${loginID == null }">
 						<td align="left" bgcolor="${value_c }">
-							<!-- 위치 수정해야함 --> <a href="/ReBake86/board/mem/loginForm.bdo">로그인</a>
+							<a href="member.mdo?cmd=login">로그인</a>
 						</td>
 					</c:when>
 					<c:otherwise>
 						<td align="left" bgcolor="${value_c }">
-							<!-- 위치 수정해야함 --> <a href="/ReBake86/board/mem/logout.bdo">로그아웃</a>
+							<a href="member.mdo?cmd=logout">로그아웃</a>
 						</td>
 					</c:otherwise>
 				</c:choose>
@@ -43,7 +43,7 @@
 
 			<table width="700" border="1" cellpadding="0" cellspacing="0">
 				<tr>
-					<td align="center"">게시판에 저장된 글이 없습니다.</td>
+					<td align="center">게시판에 저장된 글이 없습니다.</td>
 				</tr>
 			</table>
 		</c:if>
@@ -69,14 +69,14 @@
 								var="number" value="${number - 1 }" /></td>
 
 						<td width="250"><c:if test="${article.depth > 0}">
-								<img src="img/level.gif" width="${5 * article.depth }"
+								<img src="../board/img/level.gif" width="${5 * article.depth }"
 									height="16">
-								<img src="img/re.gif">
+								<img src="../board/img/re.gif">
 							</c:if> <c:if test="${article.depth == 0}">
-								<img src="img/level.gif" width="${5 * article.depth }"
+								<img src="../board/img/level.gif" width="${5 * article.depth }"
 									height="16">
 							</c:if> <a class="my_text"
-							href="/ReBake86/board/content.bdo?num=${article.num }&pageNum=${currentPage }">
+							href="member.mdo?cmd=content&num=${article.num }&pageNum=${currentPage }">
 								${article.subject }</a> <c:if test="${article.imageUID != null }">
 								<img class="my_img"
 									src="../board/img/uploadImg/${article.imageUID }.jpg"
@@ -86,7 +86,7 @@
 								test="${cmCnt >= 1 }">
 				[${cmCnt }]
 			</c:if> <c:if test="${article.readcount >= 20 }">
-								<img src="img/hot.gif" border="0" height="16">
+								<img src="../board/img/hot.gif" border="0" height="16">
 							</c:if></td>
 
 						<td align="center" width="100"><a
@@ -132,50 +132,50 @@
 
 			<c:if test="${startPage > pageBlock }">
 				<c:if test="${searchText == null }">
-					<a href="/ReBake86/board/list.bdo?pageNum=1">[<<]</a>
+					<a href="member.mdo?cmd=list&pageNum=1">[<<]</a>
 					<a
-						href="/ReBake86/board/list.bdo?pageNum=${startPage-pageBlock }">[이전]</a>
-					<a href="/ReBake86/board/list.bdo?pageNum=${currentPage - 1 }">[<]</a>
+						href="member.mdo?cmd=list&pageNum=${startPage-pageBlock }">[이전]</a>
+					<a href="member.mdo?cmd=list&pageNum=${currentPage - 1 }">[<]</a>
 				</c:if>
 				<c:if test="${searchText != null }">
 					<a
-						href="/ReBake86/board/list.bdo?pageNum=${startPage-pageBlock }&searchWhat=${searchWhat }&searchText=${searchText }">[이전]</a>
+						href="member.mdo?cmd=list&pageNum=${startPage-pageBlock }&searchWhat=${searchWhat }&searchText=${searchText }">[이전]</a>
 				</c:if>
 			</c:if>
 
 			<c:forEach var="i" begin="${startPage }" end="${endPage }">
 				<c:if test="${searchText == null }">
-					<a href="/ReBake86/board/list.bdo?pageNum=${i }">[${i }]</a>
+					<a href="member.mdo?cmd=list&pageNum=${i }">[${i }]</a>
 				</c:if>
 				<c:if test="${searchText != null }">
 					<a
-						href="/ReBake86/board/list.bdo?pageNum=${i }&searchWhat=${searchWhat }&searchText=${searchText }">[${i }]</a>
+						href="member.mdo?cmd=list&pageNum=${i }&searchWhat=${searchWhat }&searchText=${searchText }">[${i }]</a>
 				</c:if>
 			</c:forEach>
 
 			<c:if test="${endPage < pageCount}">
 				<c:if test="${searchText == null }">
-					<a href="/ReBake86/board/list.bdo?pageNum=${currentPage + 1}">[>]</a>
+					<a href="member.mdo?cmd=list&pageNum=${currentPage + 1}">[>]</a>
 					<a
-						href="/ReBake86/board/list.bdo?pageNum=${startPage+pageBlock}">[다음]</a>
-					<a href="/ReBake86/board/list.bdo?pageNum=${pageCount }">[>>]</a>
+						href="member.mdo?cmd=list&pageNum=${startPage+pageBlock}">[다음]</a>
+					<a href="member.mdo?cmd=list&pageNum=${pageCount }">[>>]</a>
 				</c:if>
 				<c:if test="${searchText != null }">
 					<a
-						href="/ReBake86/board/list.bdo?pageNum=${startPage+pageBlock}&searchWhat=${searchWhat }&searchText=${searchText }">[다음]</a>
+						href="member.mdo?cmd=list&pageNum=${startPage+pageBlock}&searchWhat=${searchWhat }&searchText=${searchText }">[다음]</a>
 				</c:if>
 			</c:if>
 		</c:if>
 
 		<!-- 검색 창 -->
-		<form action="/ReBake86/board/list.bdo" name="search"
-			onsubmit="searchSave()">
+		<form action="member.mdo?cmd=list&pageNum=1" method="post" name="search" onsubmit="return searchSave()">
 			<select name="searchWhat">
 				<option value="writer">작성자</option>
 				<option value="subject">제목</option>
 				<option value="content">내용</option>
-			</select> <input type="text" name="searchText"> <input type="submit"
-				value="검색">
+			</select> 
+			<input type="text" name="searchText"> 
+			<input type="submit"value="검색">
 		</form>
 	</div>
 </body>

@@ -1,16 +1,18 @@
 package com.board.action;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.board.model.BoardDAO;
-import com.board.model.BoardVO;
+import com.mvcmem.action.Action;
+import com.mvcmem.control.ActionForward;
 
-public class DeleteFormAction implements CommandAction {
+public class B_DeleteFormAction implements Action {
 
 	@Override
-	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
 		String pageNum = request.getParameter("pageNum");
 		int num = Integer.parseInt(request.getParameter("num"));
 		String imageUID = request.getParameter("imageUID");
@@ -19,7 +21,7 @@ public class DeleteFormAction implements CommandAction {
 		request.setAttribute("pageNum", pageNum);
 		request.setAttribute("imageUID", imageUID);
 		
-		return "/board/deleteForm.jsp";
+		return new ActionForward("/board/deleteForm.jsp", false);
 	}
-
+	
 }

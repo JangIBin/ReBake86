@@ -14,13 +14,13 @@
 	<c:if test="${loginID == null }">
 		<script type="text/javascript">
 				alert('로그인을 하세요.');
-				location.href = '../board/mem/login.jsp';
+				location.href = 'member.mdo?cmd=login';
 				</script>
 	</c:if>
 	<c:if test="${num == 0 }">
 		<script type="text/javascript">
 				alert('유효하지 않은 글 입니다.');
-				location.href = './list.bdo';
+				location.href = 'member.mdo?cmd=list';
 				</script>
 	</c:if>
 
@@ -50,7 +50,7 @@
 						<c:otherwise>
 							<script type="text/javascript">
 							window.close();
-							window.opener.location.href= '../board/content.bdo?num='+${num}+'&pageNum='+${pageNum };
+							window.opener.location.href= 'member.mdo?cmd=content&num='+${num}+'&pageNum='+${pageNum };
 						</script>
 						</c:otherwise>
 					</c:choose>

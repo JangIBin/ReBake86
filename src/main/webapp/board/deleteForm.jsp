@@ -26,8 +26,8 @@
 		<b>글 삭제</b> <br>
 		<br>
 
-		<form action="/ReBake86/board/deletePro.bdo?pageNum=${pageNum }"
-			method="post " name="delForm" onsubmit="return deleteSave()">
+		<form action="member.mdo?cmd=b_DeletePro&pageNum=${pageNum }"
+			method="post" name="delForm" onsubmit="return deleteSave()">
 
 			<table width="360" border="1" align="center" cellpadding="0"
 				cellspacing="0">
@@ -49,7 +49,7 @@
 				<tr height="30">
 					<td align="center" bgcolor="${value_c }"><input type="submit"
 						value="글삭제"> <input type="button" value="글목록"
-						onclick="document.location.href='/ReBake86/board/list.bdo?pageNum=${pageNum}'">
+						onclick="document.location.href='member.mdo?cmd=list&pageNum=${pageNum}'">
 					</td>
 				</tr>
 			</table>

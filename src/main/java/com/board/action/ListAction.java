@@ -1,5 +1,6 @@
 package com.board.action;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
@@ -10,14 +11,15 @@ import com.board.model.BoardDAO;
 import com.board.model.BoardVO;
 import com.comment.model.*;
 import com.evaluation.model.*;
+import com.mvcmem.action.Action;
+import com.mvcmem.control.ActionForward;
 
 //글 목록을 처리하는 클래스
-public class ListAction implements CommandAction {
-
+public class ListAction implements Action {
+	
 	@Override
-	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-
 		String pageNum = request.getParameter("pageNum");
 
 		if(pageNum == null){ //현재 페이지는 무조건 1
@@ -89,8 +91,7 @@ public class ListAction implements CommandAction {
 		request.setAttribute("commentDAO", commentDAO);
 		request.setAttribute("evaluationDAO", evaluationDAO);
 		
-		//해당 뷰로 반환 해줌
-		return "/board/list.jsp";
+		return new ActionForward("/board/list.jsp", false);
 	}
 
 }

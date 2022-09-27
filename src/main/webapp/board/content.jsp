@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>게시판</title>
 <link rel="stylesheet" type="text/css" href="style.css?after">
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="../board/script.js"></script>
 </head>
 
 <body bgcolor="${bodyback_c }">
@@ -64,30 +64,30 @@
 					<td align="right" bgcolor="${value_c }" colspan="6"><input
 						type="hidden" value="${article.imageUID }" name="imageUID">
 						<c:if test="${loginID != null }">
-							<c:if test="${article.writer eq vo.name}">
+							<c:if test="${article.writer eq vo.nickname}">
 								<input type="button" value="글수정"
-									onclick="document.location.href='/ReBake86/board/updateForm.bdo?num=${article.num }&pageNum=${pageNum }'">
+									onclick="document.location.href='member.mdo?cmd=updateForm&num=${article.num }&pageNum=${pageNum }'">
 					&nbsp;&nbsp;&nbsp;&nbsp;
 
 					<input type="button" value="글삭제"
-									onclick="document.location.href='/ReBake86/board/deleteForm.bdo?num=${article.num }&pageNum=${pageNum }&imageUID=${article.getImageUID() }'">
+									onclick="document.location.href='member.mdo?cmd=b_DeleteForm&num=${article.num }&pageNum=${pageNum }&imageUID=${article.getImageUID() }'">
 					&nbsp;&nbsp;&nbsp;&nbsp;
 						</c:if>
 
 							<input type="button" value="답글쓰기"
-								onclick="document.location.href='/ReBake86/board/writeForm.bdo?num=${article.num }&pageNum=${pageNum }&ref=${article.ref }&step=${article.step }&depth=${article.depth }'">
+								onclick="document.location.href='member.mdo?cmd=writeForm&num=${article.num }&pageNum=${pageNum }&ref=${article.ref }&step=${article.step }&depth=${article.depth }'">
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					</c:if> <input type="button" value="글목록"
-						onclick="document.location.href='/ReBake86/board/list.bdo?pageNum=${pageNum }'">
+						onclick="document.location.href='member.mdo?cmd=list&pageNum=${pageNum }'">
 						&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				</tr>
 
 				<tr align="center">
 					<td colspan="2"><input type="button"
-						onclick="location.href='evaluationAction.bdo?gechu=1&bichu=0&num=${num}'"
+						onclick="location.href='member.mdo?cmd=evaluation&gechu=1&bichu=0&num=${num}'"
 						value="좋아요(${gechu })"></td>
 					<td colspan="4"><input type="button"
-						onclick="location.href='evaluationAction.bdo?gechu=0&bichu=1&num=${num}'"
+						onclick="location.href='member.mdo?cmd=evaluation&gechu=0&bichu=1&num=${num}'"
 						value="싫어요(${bichu })"></td>
 				</tr>
 
@@ -116,7 +116,7 @@
 																	onclick="nwindow(${num },${list.commentID })">수정</a>
 															</form>
 															<a onclick="return confirm('정말로 삭제하시겠습니까?')"
-																href="commentDeleteAction.bdo?num=${num }&commentID=${list.commentID }">삭제</a>
+																href="member.mdo?cmd=commentDelete&num=${num }&commentID=${list.commentID }">삭제</a>
 														</c:if></td>
 												</tr>
 												<tr>
@@ -145,17 +145,17 @@
 		<div align="center">
 			<div>
 				<form method="post" encType="multipart/form-data"
-					action="commentAction.bdo?num=${num }" name="commentInputForm"
+					action="member.mdo?cmd=comment&num=${num }" name="commentInputForm"
 					onsubmit="return checkText()">
 					<table style="text-align: center; border: 1px solid #dddddd">
 						<tr>
 							<td style="border-bottom: none;" valign="middle"><br>
 							<br>
-							<c:if test="${loginID != null }">${vo.name }(${loginID })</c:if>
+							<c:if test="${loginID != null }">${vo.nickname }(${loginID })</c:if>
 								<c:if test="${loginID == null }">^오^</c:if></td>
 							<!-- <td><input type="text" style="height:100px;" placeholder="상대방을 존중하는 댓글을 남깁시다." name="commentText"></td> -->
 							<td><textarea style="height: 100px;" name="commentText"
-									placeholder="상대방을 존중하는 댓글을 남깁시다."></textarea></td>
+									placeholder="상대방을 존중하는 댓글을 남깁시다.^오^"></textarea></td>
 							<td><br>
 							<br>
 							<input type="submit" value="댓글 작성"></td>
