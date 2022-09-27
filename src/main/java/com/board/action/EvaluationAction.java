@@ -7,14 +7,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.evaluation.model.EvaluationDAO;
 import com.evaluation.model.EvaluationVO;
-import com.mvcmem.model.StudentDAO;
+import com.mvcmem.model.MemberDAO;
 
 public class EvaluationAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
-		StudentDAO dao  = StudentDAO.getInstance();
+		MemberDAO dao  = MemberDAO.getInstance();
 		
 		int num = 0; int gechu = 0; int bichu = 0; int result = 0;
 		String userID = null;

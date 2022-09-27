@@ -3,7 +3,9 @@ package com.board.action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mvcmem.model.StudentDAO;
+import com.mvcmem.model.MemberDAO;
+
+
 
 public class WriteFormAction implements CommandAction {
 
@@ -13,7 +15,7 @@ public class WriteFormAction implements CommandAction {
 		//새글일 경우 num = 0이라고 해서 넘겨줄 것이고 답변글일 경우 원래의 글번호의 num을 받아와서
 		//넘겨줌 num을 통해서 새글인지 답변글인지를 구별할 수 있음
 
-		StudentDAO dao  = StudentDAO.getInstance();
+		MemberDAO dao  = MemberDAO.getInstance();
 		
 		int num=0, ref=1, step=0, depth=0;
 		try{

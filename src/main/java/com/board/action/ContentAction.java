@@ -12,8 +12,8 @@ import com.comment.model.CommentDAO;
 import com.comment.model.CommentVO;
 import com.evaluation.model.EvaluationDAO;
 import com.evaluation.model.EvaluationVO;
-import com.mvcmem.model.StudentDAO;
-import com.mvcmem.model.StudentVO;
+import com.mvcmem.model.MemberDAO;
+
 
 public class ContentAction implements CommandAction {
 
@@ -29,7 +29,7 @@ public class ContentAction implements CommandAction {
 			EvaluationDAO evaDAO = new EvaluationDAO();
 			int gechuCnt = evaDAO.countGechu(num);
 			
-			StudentDAO dao  = StudentDAO.getInstance();
+			MemberDAO dao  = MemberDAO.getInstance();
 			
 			int gechu = 0;
 			int bichu = 0;

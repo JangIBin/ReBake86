@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.comment.model.CommentDAO;
 import com.comment.model.CommentVO;
-import com.mvcmem.model.StudentDAO;
-import com.mvcmem.model.StudentVO;
+import com.mvcmem.model.MemberDAO;
+import com.mvcmem.model.MemberVO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -19,14 +19,14 @@ public class CommentAction implements CommandAction {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
-		StudentDAO dao  = StudentDAO.getInstance();
+		MemberDAO dao  = MemberDAO.getInstance();
 		CommentVO comment  = new CommentVO();
 		
 		String userID = null;
 	 	String userName = "";
 	 	if(request.getSession().getAttribute("loginID") != null){
 	 		userID = (String) request.getSession().getAttribute("loginID");
-	 		StudentVO vo = dao.getMember(userID);
+	 		MemberVO vo = dao.getMember(userID);
 			userName = vo.getName();
 	 	}
 	 	
