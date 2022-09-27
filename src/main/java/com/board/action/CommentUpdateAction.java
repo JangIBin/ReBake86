@@ -1,16 +1,20 @@
 package com.board.action;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.comment.model.CommentDAO;
 import com.comment.model.CommentVO;
+import com.mvcmem.action.Action;
+import com.mvcmem.control.ActionForward;
 
-public class CommentUpdateAction implements CommandAction {
+public class CommentUpdateAction implements Action {
 
 	@Override
-	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
 		int num = 0;
 		if (request.getParameter("num") != null){
 			num = Integer.parseInt(request.getParameter("num"));
@@ -31,7 +35,7 @@ public class CommentUpdateAction implements CommandAction {
 		
 		request.setAttribute("imageUID", imageUID);//
 		
-		return "/board/commentUpdate.jsp";
+		return new ActionForward("/board/commentUpdate.jsp", false);
 	}
-
+	
 }

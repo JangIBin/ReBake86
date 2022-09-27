@@ -1,5 +1,6 @@
 package com.board.action;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,12 +8,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.evaluation.model.EvaluationDAO;
 import com.evaluation.model.EvaluationVO;
+import com.mvcmem.action.Action;
+import com.mvcmem.control.ActionForward;
 import com.mvcmem.model.MemberDAO;
 
-public class EvaluationAction implements CommandAction {
+public class EvaluationAction implements Action {
 
 	@Override
-	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		MemberDAO dao  = MemberDAO.getInstance();
 		
@@ -55,7 +58,7 @@ public class EvaluationAction implements CommandAction {
 		request.setAttribute("bichu", bichu);
 		request.setAttribute("num", num);
 		
-		return "/board/evaluationAction.jsp";
+		return new ActionForward("/board/evaluationAction.jsp", false);
 	}
-
+	
 }

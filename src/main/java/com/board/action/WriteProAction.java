@@ -1,6 +1,7 @@
 package com.board.action;
 
 import java.io.File;
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.UUID;
 
@@ -10,14 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.board.model.BoardDAO;
 import com.board.model.BoardVO;
+import com.mvcmem.action.Action;
+import com.mvcmem.control.ActionForward;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-public class WriteProAction implements CommandAction {
+public class WriteProAction implements Action {
 
 	@Override
-	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		
 		request.setCharacterEncoding("utf-8");
 		
 		String realFolder="";
@@ -73,7 +77,7 @@ public class WriteProAction implements CommandAction {
 			oldFile.renameTo(newFile);
 		}
 		
-		return "/board/writeProc.jsp";
+		return new ActionForward("/board/writeProc.jsp", false);
 	}
-
+	
 }

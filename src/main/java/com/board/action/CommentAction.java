@@ -1,6 +1,7 @@
 package com.board.action;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.UUID;
 
 import javax.servlet.ServletContext;
@@ -9,15 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.comment.model.CommentDAO;
 import com.comment.model.CommentVO;
+import com.mvcmem.action.Action;
+import com.mvcmem.control.ActionForward;
 import com.mvcmem.model.MemberDAO;
 import com.mvcmem.model.MemberVO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-public class CommentAction implements CommandAction {
+public class CommentAction implements Action {
 
 	@Override
-	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		MemberDAO dao  = MemberDAO.getInstance();
 		CommentVO comment  = new CommentVO();
@@ -27,7 +30,7 @@ public class CommentAction implements CommandAction {
 	 	if(request.getSession().getAttribute("loginID") != null){
 	 		userID = (String) request.getSession().getAttribute("loginID");
 	 		MemberVO vo = dao.getMember(userID);
-			userName = vo.getName();
+			userName = vo.getNickname();
 	 	}
 	 	
 	 	
@@ -76,7 +79,7 @@ public class CommentAction implements CommandAction {
 		request.setAttribute("num", num);
 		request.setAttribute("commentID", commentID);
 		
-		return "/board/commentAction.jsp";
+		return new ActionForward("/board/commentAction.jsp", false);
 	}
-
+	
 }

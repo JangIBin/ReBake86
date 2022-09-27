@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 
 <c:if test="${check == 1 }">
-	<meta http-equiv="Refresh" content="0;url=/ReBake86/board/list.bdo">
+	<meta http-equiv="Refresh" content="0;url=member.mdo?cmd=list">
 </c:if>
 
 <c:if test="${check == 0 }">

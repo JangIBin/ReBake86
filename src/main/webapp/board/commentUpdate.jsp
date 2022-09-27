@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="../board/script.js"></script>
 <meta charset="UTF-8">
 <title></title>
 </head>
@@ -16,8 +16,8 @@
 				<br>댓글수정창
 			</h3>
 			<form method="post" name=c_commentUpdate
-				action="commentUpdatePro.bdo?num=${num }&commentID=${commentID }&commentText=${commentText}&imageUID=${imageUID }"
-				enctype="multipart/form-data">
+				action="member.mdo?cmd=commentUpdatePro&num=${num }&commentID=${commentID }&commentText=${commentText}&imageUID=${imageUID }"
+				enctype="multipart/form-data" onsubmit="return updateCommentSave()">
 				<input type="text" id="update" name="update"
 					style="width: 400px; height: 50px;" maxlength=1024
 					value="${commentText }"> <input type="submit" value="수정">

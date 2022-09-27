@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>My Board</title>
 <link rel="stylesheet" type="text/css" href="style.css?after">
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="../board/script.js"></script>
 
 </head>
 <c:set var="loginID" value="${sessionScope.loginID }" />
@@ -20,7 +20,7 @@
 	<div align="center">
 		<b>글 쓰기</b><br>
 		<br>
-		<form action="/ReBake86/board/writePro.bdo" method="post"
+		<form action="member.mdo?cmd=writePro" method="post"
 			name="writeForm" onsubmit="return writeSave()"
 			encType="multipart/form-data">
 
@@ -33,19 +33,19 @@
 				align="center" bgcolor="${bodyback_c }">
 				<tr>
 					<td align="right" colspan="2" bgcolor="${value_c }"><a
-						href="/ReBake86/board/list.bdo">글 목록</a></td>
+						href="member.mdo?cmd=list">글 목록</a></td>
 				</tr>
 
 				<tr>
 					<td width="70" bgcolor="${value_c }" align="center">이름</td>
 					<td width="330"><input type="text" size="12" maxlength="12"
-						name="writer" readonly="readonly" value="${vo.name }"></td>
+						name="writer" readonly="readonly" value="${vo.nickname }"></td>
 				</tr>
 
 				<tr>
 					<td width="70" bgcolor="${value_c }" align="center">이메일</td>
 					<td width="330"><input type="text" size="30" maxlength="30"
-						name="email"></td>
+						name="email" readonly="readonly" value="${vo.email }"></td>
 				</tr>
 
 				<tr>
@@ -79,7 +79,7 @@
 					<td colspan="2" bgcolor="${value_c }" align="center"><input
 						type="submit" value="글쓰기"> <input type="reset"
 						value="다시작성"> <input type="button" value="목록"
-						onclick="window.location='/ReBake86/board/list.bdo'"></td>
+						onclick="window.location='member.mdo?cmd=list'"></td>
 				</tr>
 			</table>
 		</form>

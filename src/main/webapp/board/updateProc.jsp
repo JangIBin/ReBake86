@@ -9,7 +9,7 @@
 
 <c:if test="${check == 1 }">
 	<meta http-equiv="Refresh"
-		content="0;url=/ReBake86/board/content.bdo?num=${num }&pageNum=${pageNum }">
+		content="0;url=member.mdo?cmd=content&num=${num }&pageNum=${pageNum }">
 </c:if>
 
 <c:if test="${check == 0 }">

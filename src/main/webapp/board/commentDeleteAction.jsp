@@ -17,7 +17,7 @@
 	<c:if test="${loginID == null }">
 		<script type="text/javascript">
 			alert('로그인을 하세요.');
-			location.href = '../board/mem/login.jsp';
+			location.href = 'member.mdo?cmd=login';
  		</script>
 	</c:if>
 	<c:if test="${commentID == 0 }">

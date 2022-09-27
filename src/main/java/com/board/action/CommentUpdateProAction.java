@@ -1,6 +1,7 @@
 package com.board.action;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.UUID;
 
 import javax.servlet.ServletContext;
@@ -9,14 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.comment.model.CommentDAO;
 import com.comment.model.CommentVO;
+import com.mvcmem.action.Action;
+import com.mvcmem.control.ActionForward;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-public class CommentUpdateProAction implements CommandAction {
+public class CommentUpdateProAction implements Action {
 
 	@Override
-	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
 		request.setCharacterEncoding("utf-8");
 		
 		String loginID = null;
@@ -57,14 +60,14 @@ public class CommentUpdateProAction implements CommandAction {
 		
 				int result = -1;
 				
-				if(loginID != null && commentText != null){
+				if(loginID != null){
 					result = commentDAO.update(commentID, commentText, uidName);
 				}
 				
 				if(result == 1) {
 					
 					if(fileName != null){
-						String real = "C:\\jspworkspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\TestProject2\\board\\img\\uploadImg";
+						String real = "C:\\jspworkspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\Rebake86\\board\\img\\uploadImg";
 						File delFile = new File(real+"\\"+imageUID+".jpg");
 						if(delFile.exists()){
 							delFile.delete();
@@ -73,7 +76,7 @@ public class CommentUpdateProAction implements CommandAction {
 						File newFile = new File(realFolder+"\\"+uidName+".jpg");
 						oldFile.renameTo(newFile);
 					}else{
-						String real = "C:\\jspworkspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\TestProject2\\board\\img\\uploadImg";
+						String real = "C:\\jspworkspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\Rebake86\\board\\img\\uploadImg";
 						File delFile = new File(real+"\\"+imageUID+".jpg");
 						if(delFile.exists()){
 							delFile.delete();
@@ -81,14 +84,14 @@ public class CommentUpdateProAction implements CommandAction {
 					}
 				
 				}
-				
+
 				request.setAttribute("num", num);
 				request.setAttribute("pageNum", pageNum);
 				request.setAttribute("commentID", commentID);
 				request.setAttribute("commentText", commentText);
 				request.setAttribute("result", result);
 		
-		return "/board/commentUpdateProc.jsp";
+		return new ActionForward("/board/commentUpdateProc.jsp", false);
 	}
-
+	
 }

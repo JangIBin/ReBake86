@@ -2,20 +2,6 @@
 <web-app>
 
 	<display-name>ReBake86</display-name>
-	
-	<servlet>
-      <servlet-name>Controller</servlet-name>
-      <servlet-class>com.board.controller.ControllerAction</servlet-class>
-      <init-param>
-         <param-name>propertyConfig</param-name>
-         <param-value>CommandPro.properties</param-value>
-      </init-param>
-   </servlet>
-
-   <servlet-mapping>
-      <servlet-name>Controller</servlet-name>
-      <url-pattern>*.bdo</url-pattern>
-   </servlet-mapping>
 
 	<jsp-config>
 	     <taglib>

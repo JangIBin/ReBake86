@@ -1,5 +1,6 @@
 package com.mvcmem.control;
 
+import com.board.action.*;
 import com.mvcmem.action.Action;
 import com.mvcmem.action.DeleteFormAction;
 import com.mvcmem.action.DeleteProcAction;
@@ -77,8 +78,72 @@ public class ActionFactory {
 		case "deleteProc":
 			action = new DeleteProcAction();
 			break;		
+		
+		
 			
 			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		case "list":
+			action = new ListAction();
+			break;
+			
+		case "comment":
+			action = new CommentAction();
+			break;
+			
+		case "commentDelete":
+			action = new CommentDeleteAction();
+			break;
+			
+		case "commentUpdate":
+			action = new CommentUpdateAction();
+			break;
+			
+		case "commentUpdatePro":
+			action = new CommentUpdateProAction();
+			break;
+			
+		case "content":
+			action = new ContentAction();
+			break;
+			
+		case "b_DeleteForm":
+			action = new B_DeleteFormAction();
+			break;
+			
+		case "b_DeletePro":
+			action = new B_DeleteProAction();
+			break;
+			
+		case "evaluation":
+			action = new EvaluationAction();
+			break;
+			
+		case "updateForm":
+			action = new UpdateFormAction();
+			break;
+			
+		case "updatePro":
+			action = new UpdateProAction();
+			break;
+			
+		case "writeForm":
+			action = new WriteFormAction();
+			break;
+			
+		case "writePro":
+			action = new WriteProAction();
+			break;
 			
 		default :
 			action = new IndexAction();
