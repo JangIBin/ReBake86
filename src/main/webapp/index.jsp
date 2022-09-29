@@ -28,31 +28,42 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Homemade+Apple|Old+Standard+TT:700|Share+Tech+Mono"
 	rel="stylesheet">
-<title>Document</title>
-<link rel="stylesheet" href="frontEnd/css/index.css">
+	
+<link rel="stylesheet" href="resources/css/index.css">
 <link rel="stylesheet" href="resources/css/reset.css">
+	
+<title>Document</title>
+
 </head>
 <body>
-	<ul>
-		<img class="logoImg" src="image/logoImg.png" alt="">
-		<li class="title"><a class="rebake" href="#">RE:<span>bake</span></a>
+	<div class="sidebar">
+		<ul>
+			<img class="logoImg" src="image/logoImg.png" alt="">
+			<li class="title">
+				<a class="rebake" href="#">
+					RE:
+					<span>bake</span>
+				</a>
+			</li>
+	
+			<li><a href="member.mdo?cmd=login">Sign in</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Recommend</a></li>
+			<li><a href="#">Contact Us</a></li>
+	
+			<div class="text_wrap">
+				<div class="tel_email">
+					<span>TEL</span> : +81 02 519 3119 <br />
+					<span>Email : qpq</span>85@<span>gmail.com</span>
+				</div>
+				<div class="socialImo">
+					<i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-twitter"></i>
+					<i class="fa-brands fa-instagram"></i>
+				</div>
+			</div>
 
-		</li>
-
-		<li><a href="#">Sign in</a></li>
-		<li><a href="#">About</a></li>
-		<li><a href="#">Recommend</a></li>
-		<li><a href="#">Contact Us</a></li>
-
-
-		<div class="tel_email">
-			<span>TEL</span> : +81 02 519 3119 <br /> <span>Email : qpq</span>85@<span>gmail.com</span>
-		</div>
-		<div class="socialImo">
-			<i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-twitter"></i>
-			<i class="fa-brands fa-instagram"></i>
-		</div>
-	</ul>
+		</ul>
+	</div>
 
 	<div class="mainImg">
 		<div class="mainSentence">
@@ -69,7 +80,10 @@
 			<a href="ChoosePage.html"></a> Click here
 		</div>
 	</div>
-	<script>
+	
+
+</body>
+<script>
       let slideIndex = 0;
 
       const x = document.getElementsByClassName("mainSlides");
@@ -88,8 +102,6 @@
           setTimeout(slideShow, 4000);
       }
       </script>
-
-</body>
 <script type="text/javascript" src="./resources/js/Map.js"></script>
 
 </html>

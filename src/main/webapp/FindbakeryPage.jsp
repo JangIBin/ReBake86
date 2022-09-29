@@ -9,8 +9,9 @@
     <script src="https://kit.fontawesome.com/1fd422b08e.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1fd422b08e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="FindbakeryPage.css">
-    <link rel="stylesheet" href="reset.css">
+    
+    <link rel="stylesheet" href="resources/css/FindbakeryPage.css">
+    <link rel="stylesheet" href="resources/css/reset.css">
     
     <title>Document</title>
 </head>
