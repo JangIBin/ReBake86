@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+:root{
+    --text-color:rgb(165, 195, 195);
+    --background-color: rgb(235, 243, 243);
+}
+
+a:visited, a:link, a:active {
+	text-decoration: none;
+}
+
+/* sidebar */
+.sidebar {
+	text-align: center;
+	align-items: center;
+}
+
+.sidebar ul {
+	list-style-type: none;
+	background: rgb(249, 249, 249);
+	min-width: 14.5%;
+	height: 100%;
+	min-height: 700px;
+	overflow: auto;
+	position: fixed;
+	/* text-align: center; */
+}
+
+li a {
+	text-decoration: none;
+	text-align: center;
+	padding: 9px;
+	margin-bottom: 15px;
+	display: block;
+	color: rgb(35, 35, 35);
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: 17px;
+	letter-spacing: -0.2px;
+}
+
+li a:hover {
+	background-color: rgb(88, 18, 0);
+	color: white;
+}
+
+.cd1 {
+	margin-left: 210px;
+	position: relative;
+}
+
+.title {
+	display: flex;
+	margin-top: 27px;
+}
+
+.rebake {
+	width: 100%;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 29px;
+	letter-spacing: 1px;
+	margin-bottom: 47px;
+}
+
+.rebake span {
+	font-family: "Old Standard TT", serif;
+	letter-spacing: 5px;
+}
+
+.rebake:hover {
+	background-color: rgb(249, 249, 249);
+	color: black;
+}
+
+.logoImg {
+	width: 120px;
+	height: 193px;
+	margin-top: 25px;
+	margin-bottom: -38px;
+}
+
+.socialImo {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	margin-top: 2px;
+}
+
+.fa-brands {
+	margin: 13px;
+	font-size: 24px;
+	margin-bottom: 23px;
+}
+
+.text_wrap {
+	position: absolute;
+	left:50%;
+	bottom: 50px;
+	transform:translate(-50%, 0);
+}
+
+.tel_email {
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 11px;
+	line-height: 200%;
+	/* margin-top: 155px; */
+}
+
+.tel_email span {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+
+main{
+    background-color: rgb(252, 252, 238);
+}
+.updateform{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.updateformTable{
+    margin-left: 195px;
+    margin-bottom: 50px;
+}
+
+.updateTitle{
+    text-align: center;
+    margin-left: 190px;
+    transform: translate(-22%);
+    font-size: 38px;
+    font-weight: 100;
+    margin-bottom: 40px;
+    margin-top: 35px;
+  }
+
+.editTable{
+    background-color: antiquewhite;
+    border-radius: 22px;
+}
+
+
+.inputArea{
+    width: 500px;
+    height: 33px;
+    font-weight: 100;
+    outline: none;
+    font-family: 'Courier New', Courier, monospace;
+    border: 0.2px solid rgb(60, 33, 18);
+}
+
+.inputWhat{
+    width: 100px;
+    height: 40px;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-weight: 300;
+    position: relative;
+}
+
+.content{
+    position: absolute;
+    top: 130px;
+    left: 28px;
+}
+
+.contentArea{
+    height: 270px;
+    width: 492px;
+    margin-top: 9px;
+    margin-bottom: 3px;
+    padding: 5px;
+    outline: none;
+    border: 0.2px solid rgb(60, 33, 18);
+}
+.idArea{
+    margin-top: 14px;
+}
+
+.exceptContent{
+    padding-top: 16px;
+    padding-bottom: 17px;
+
+}
+
+#att_zone {
+    width: 530px;
+    min-height: 150px;
+    padding: 10px;
+    border: 1px dotted rgb(60, 33, 18);
+  }
+  
+#att_zone:empty:before {
+    content: attr(data-placeholder);
+    color: rgb(117, 117, 117);
+    font-size: 14px;
+}
+
+#btnAtt{
+    padding: 8px;
+}
+
+.imagePreview{
+    width: 584px;
+    border: 1px solid black;
+    padding-bottom: 15px;
+    background-color: rgb(243, 215, 193);
+    margin-top: 15px;
+}
+
+.fileChoose{
+    padding: 10px 10px;
+    margin-left: 70px;
+}
+.threeButtonBox{
+    padding-left: 310px;
+}
+
+.threeButton{
+    margin: 20px 5px;
+    padding: 8px 13px;
+    /* border: 0.3px solid rgb(60, 33, 18); */
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.8px;
+    color: rgb(22, 154, 64);
+    font-weight: 100;
+}
+
+.threeButton:hover{
+    cursor: pointer;
+    background-color: rgb(248, 226, 209);
+}
+
+
+a:visited, a:link, a:active {
+	text-decoration: none;
+}
