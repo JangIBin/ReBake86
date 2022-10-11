@@ -1,0 +1,408 @@
+@charset "UTF-8";
+:root{
+  --text-color:rgb(165, 195, 195);
+  --background-color: rgb(235, 243, 243);
+}
+
+a:visited, a:link, a:active {
+text-decoration: none;
+}
+
+/* sidebar */
+.sidebar {
+text-align: center;
+align-items: center;
+}
+
+.sidebar ul {
+list-style-type: none;
+background: rgb(249, 249, 249);
+min-width: 14.5%;
+height: 100%;
+min-height: 700px;
+overflow: auto;
+position: fixed;
+/* text-align: center; */
+}
+
+li a {
+text-decoration: none;
+text-align: center;
+padding: 9px;
+margin-bottom: 15px;
+display: block;
+color: rgb(35, 35, 35);
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: 17px;
+letter-spacing: -0.2px;
+}
+
+li a:hover {
+background-color: rgb(88, 18, 0);
+color: white;
+}
+
+.cd1 {
+margin-left: 210px;
+position: relative;
+}
+
+.title {
+display: flex;
+margin-top: 27px;
+}
+
+.rebake {
+width: 100%;
+font-family: 'Times New Roman', Times, serif;
+font-size: 29px;
+letter-spacing: 1px;
+
+font-family: 'Times New Roman', Times, serif;
+font-size: 29px;
+letter-spacing: 0.6px;
+color: rgb(253, 233, 173);
+-webkit-text-stroke: 0.6px black;
+}
+
+.rebake span{
+font-family: "Old Standard TT", serif;
+letter-spacing: 5px;
+}
+
+.rebake:hover{
+background-color: rgb(249, 249, 249);
+color: black;
+}
+
+.logoImg {
+width: 120px;
+height: 193px;
+margin-top: 25px;
+margin-bottom: -38px;
+}
+
+.socialImo {
+cursor: pointer;
+display: flex;
+justify-content: center;
+margin-top: 2px;
+}
+
+.fa-brands {
+margin: 13px;
+font-size: 24px;
+margin-bottom: 23px;
+}
+
+.text_wrap {
+position: absolute;
+left:50%;
+bottom: 50px;
+transform:translate(-50%, 0);
+}
+
+.tel_email {
+font-family: 'Times New Roman', Times, serif;
+font-size: 11px;
+line-height: 200%;
+/* margin-top: 155px; */
+}
+
+.tel_email span {
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main{
+  align-items: center;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.eachinfoBlock{
+  margin-left: 195px;
+  
+}
+
+.titleArea{
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.title{
+  font-family: "Old Standard TT", serif;
+  font-size: 44px;
+  margin-bottom: 45px;
+  margin-top: 60px;
+  color: var(--text-color);
+  -webkit-text-stroke: 0.6px black;
+}
+
+.score_reviewNum{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 42px;
+  border: 0.6px solid var(--text-color);
+  height: 110px;
+  width: 110px;
+  border-radius: 50px;
+  margin-left: 28px;
+  margin-top: 28px;
+  background-color: rgb(249, 251, 251);
+  box-shadow: 1px 1px 4px 4px rgb(226, 234, 234);
+}
+
+.score{
+  font-family: "share tech mono", menlo;
+  font-size: 40px;
+  margin-bottom: 3px;
+  margin-top: 5px;
+  letter-spacing: -4px;
+}
+.reviewNum{
+  padding-top: 4px;
+  padding-bottom: 8px;
+  border-top: 0.3px solid var(--text-color);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(88, 112, 111);
+}
+
+.imgAndinfo{
+  display: flex;
+  align-items: center;
+  border: 0.6px solid var(--text-color);
+  width: 990px;
+  height: 380px;
+  border-radius: 8px;
+}
+
+.twoTitle{
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-family: "Old Standard TT", serif;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-weight: 100;
+}
+
+.about{
+  text-align: center;
+  margin-bottom: 32px;
+  margin-top: 26px;
+}
+
+
+.each_img{
+  width: 520px;
+  height: 381px;
+  margin-right: 20px;
+  margin-bottom: 0;
+  margin-top: 3px;
+  border-radius: 7px;
+}
+
+.each_info{
+  font-size: 15px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 46%;
+  width: auto;
+  padding: 12px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  margin-left: 486px;
+  border-radius: 3px 0 0 3px;
+}
+
+.informationArea{
+  background-color: white;
+  padding: 5px 16px;
+  width: 400px;
+  height: 340px;
+}
+
+.informationArea span{
+  font-size: 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+  'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.buttons{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 18px;
+  margin-top: 50px;
+}
+
+.location{
+  padding: 4px 8px;
+  color: rgb(73, 111, 109);
+  background-color: rgb(255, 255, 255);
+  border: 0.5px solid rgb(80, 103, 102);
+  border-radius: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 16px;
+  letter-spacing: 0.7px;
+}
+
+.location:hover{
+  cursor: pointer;
+  background-color: rgb(230, 230, 146);
+}
+
+.homepageButton:hover{
+  cursor: pointer;
+  background-color: rgb(230, 230, 146);
+}
+
+
+.homepageButton{
+  margin-right: 15px;
+  padding: 4px 8px;
+  color: rgb(73, 111, 109);
+  background-color: rgb(255, 255, 255);
+  border: 0.5px solid rgb(80, 103, 102);
+  border-radius: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 16px;
+  letter-spacing: 0.7px;
+}
+
+
+.reviewArea{
+  border: 0.6px solid var(--text-color);
+  border-radius: 5px;
+  width: 990px;
+  margin-top: 40px;
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(247, 250, 250);
+}
+
+.review{
+  text-align: center;
+  padding-top: 20px;
+
+}
+
+.sortList{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  /* background-color: rgb(249, 252, 252); */
+  border-bottom: 0.5px solid rgb(162, 187, 187);
+  margin-bottom: 30px;
+}
+
+.listEl{
+  margin: 0 10px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 0.7px;
+  font-size: 16px;
+  padding: 9px 14px;
+  border-radius: 20px;
+  border: 0.5px solid rgb(162, 187, 187);
+  background-color: white;
+  color: rgb(88, 124, 124);
+}
+.listEl:hover{
+  cursor: pointer;
+  background-color: rgb(180, 205, 205);
+}
+
+.each_review{
+  border: 0.5px solid rgb(2, 98, 113);
+  margin-bottom: 40px;
+  width: 720px;
+
+}
+
+.reviewImg{
+  width: 250px;
+  height: 180px;
+  margin-right: 20px;
+  border-radius: 4px;
+}
+
+.basicInfo{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 9px;
+  align-items: center;
+  background-color: rgb(2, 98, 113);
+  height: 45px;
+}
+
+.star_date p{
+  font-family: 'Source Sans Pro', sans-serif;
+  
+}
+
+.star{
+  color: white;
+  margin-bottom: 2px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+}
+
+.date{
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.userName{
+  color: rgb(247, 247, 247);
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+
+.img_review_reco{
+  display: flex;
+  padding: 6px;
+  background-color: rgb(250, 255, 255);
+}
+
+.review_reco{
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+.reviewTitle{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.personalReview{
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 22px;
+  font-size: 14px;
+  line-height: 120%;
+}
+
